@@ -1,3 +1,8 @@
+# Ensure ApplicationRecord is defined for environments missing the base class.
+class ApplicationRecord < ActiveRecord::Base
+  self.abstract_class = true
+end
+
 # Add a declarative step here for populating the DB with movies.
 
 Given(/the following movies exist/) do |movies_table|
